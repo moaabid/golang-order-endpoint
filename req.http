@@ -1,0 +1,30 @@
+GET http://localhost:3000/api Http/1.1 
+
+###
+POST http://localhost:3000/api/createuser Http/1.1 
+Content-Type:  application/json
+
+{
+    "first_name": "John",
+    "last_name": "Doe"
+}
+
+###
+GET http://localhost:3000/api/users Http/1.1 
+
+###
+GET http://localhost:3000/api/user/1 Http/1.1 
+
+
+###
+POST http://localhost:3000/api/updateuser/1 Http/1.1 
+Content-Type:  application/json
+
+{
+    "first_name": "John",
+    "last_name": "Morisson"
+}
+
+
+###
+DELETE http://localhost:3000/api/deleteuser/3 Http/1.1 

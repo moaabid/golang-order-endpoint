@@ -17,6 +17,18 @@ func main() {
 }
 
 func setupRoutes(app *fiber.App) {
+	app.Get("/api", func(c *fiber.Ctx) error {
+		return c.SendString("simple gofiber endpoint")
+	})
 
-	app.Post("/api/user", routes.CreateUser)
+	///Users Endpoint
+	app.Post("/api/createuser", routes.CreateUser)
+
+	app.Get("/api/users", routes.GetUsers)
+
+	app.Get("/api/user/:id", routes.GetUser)
+
+	app.Post("/api/updateuser/:id", routes.UpdateUser)
+
+	app.Delete("/api/deleteuser/:id", routes.DeleteUser)
 }
